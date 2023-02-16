@@ -34,10 +34,13 @@ const Formulario = () => {
     }
 
     let response = await peticionPOST("/proyectoreactfinal/src/php/altaArtista.php", formData)
-
+    
       .catch((error) => {
         alert(error.message);
       });
+      if (!response.error) {
+        window.confirm("Usuario dado de alta correctamente");
+      }
   };
 
   return (
